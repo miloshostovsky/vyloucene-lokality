@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ title or "Vyloučené lokality v ČR" }}</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Farro:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <span>VYLOUCENE LOKALITY V CR &nbsp;.&nbsp; <b>PRUBEZNE ROZSIROVANY ZDROJ</b></span>
+  <span>DATA K: 2025-2026 &nbsp;.&nbsp; URCENO: VEREJNA SPRAVA / NGO / VEREJNOST</span>
+</div>
+
+<header class="sitehead">
+  <div class="headrow">
+    <a class="brand" href="/">vyloucene lokality</a>
+  </div>
+  <nav class="chapternav">
+    <div class="navrow">
+      {% for ch in chapters %}
+        {% if ch.status == "done" %}<a href="{{ ch.url }}" class="{% if ch.url == page.url %}active{% endif %}">{{ ch.title }}</a>{% else %}<span class="soon">{{ ch.title }}</span>{% endif %}
+      {% endfor %}
+    </div>
+  </nav>
+</header>
+
+{{ content | safe }}
+
+<footer class="sitefoot">
+  <div class="wrap">
+    <h3>Vyloucene lokality v CR</h3>
+    <p>Nezavisly informacni zdroj k tematu socialniho vyloucenia v Cesku.</p>
+    <div class="fine">SESTAVENO S POMOCI CLAUDE (ANTHROPIC)</div>
+  </div>
+</footer>
+
+</body>
+</html>
