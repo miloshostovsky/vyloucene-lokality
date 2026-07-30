@@ -1,0 +1,18 @@
+[
+    {"title": "Domů", "url": "/", "status": "done"},
+    {"title": "Data a mapa", "url": "/data-mapa/", "status": "soon"},
+    {"title": "Příčiny a historie", "url": "/priciny/", "status": "soon"},
+    {"title": "Negativní jevy", "url": "/negativni-jevy/", "status": "soon"},
+    {"title": "Spektrum přístupů", "url": "/pristupy/", "status": "soon"},
+    {"title": "Migrace a nerovnost", "url": "/migrace/", "status": "soon"},
+    {"title": "Bydlení", "url": "/bydleni/", "status": "soon"},
+    {"title": "Vzdělávání", "url": "/vzdelavani/", "status": "soon"},
+    {"title": "Zaměstnanost a dávky", "url": "/prace/", "status": "soon"},
+    {"title": "Zdraví a bezpečnost", "url": "/zdravi/", "status": "soon"},
+    {"title": "Instituce a legislativa", "url": "/instituce/", "status": "soon"},
+    {"title": "Dobrá praxe v Evropě", "url": "/dobra-praxe/", "status": "soon"},
+    {"title": "Akademické teorie", "url": "/teorie/", "status": "soon"},
+    {"title": "Pro veřejnou správu", "url": "/verejna-sprava/", "status": "soon"},
+    {"title": "Pro NGO a komunitu", "url": "/ngo/", "status": "soon"},
+    {"title": "Zdroje a glosář", "url": "/zdroje/", "status": "soon"}
+]
