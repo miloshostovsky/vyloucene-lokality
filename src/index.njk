@@ -1,0 +1,42 @@
+---
+title: "Vyloučené lokality v Česku"
+layout: base.njk
+---
+<header class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Ucelený přehled tématu</span>
+    <h1>Vyloučené lokality v Česku</h1>
+    <p class="lede">Kde v ČR sociální vyloučení skutečně existuje, proč vzniklo, co s ním dělá stát, obce i neziskový sektor — a jaké různé přístupy k řešení se v Evropě zkoušejí. Zdroj pro rychlou orientaci i pro hlubší práci s tématem.</p>
+
+    <div class="statgrid">
+      <div class="statcell dark"><div class="val">606</div><div class="cap">sociálně vyloučených lokalit (analýza MPSV/GAC, 2015)</div></div>
+      <div class="statcell"><div class="val">297</div><div class="cap">obcí a měst, kde se lokality nacházejí</div></div>
+      <div class="statcell"><div class="val">95–115<small> tis.</small></div><div class="cap">odhad počtu obyvatel těchto lokalit</div></div>
+      <div class="statcell alert"><div class="val">241</div><div class="cap">obcí s vyloučenými místy dle Indexu Agentury (2024)</div></div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <span class="eyebrow">O tomto webu</span>
+    <div class="prose">
+      <p>Pojem „sociálně vyloučená lokalita" se v Česku ustálil díky výzkumům Ministerstva práce a sociálních věcí a dnes ho používá státní správa, obce i neziskové organizace. Přesto zůstává téma roztříštěné — data jsou stará přes deset let, odpovědnost je rozdělená mezi několik ministerstev a obcí a veřejná debata se často zúží na jedno médiu vděčné klišé. Tento web se snaží dát dohromady, co je o tématu skutečně známo, kde jsou mezery v datech a jaké nástroje řešení se v Česku i Evropě reálně zkoušejí.</p>
+    </div>
+
+    <span class="eyebrow" style="margin-top:50px;">Mapa webu</span>
+    <h2 style="margin-bottom:20px;">Všech šestnáct kapitol</h2>
+    <div class="grid-3">
+      {% for ch in chapters %}
+        {% if ch.url != "/" %}
+        <div class="card" style="{% if ch.status != 'done' %}opacity:.55;{% endif %}">
+          <span class="tag">{{ ch.num }}</span>
+          <h3>{{ ch.title }}</h3>
+          <p style="font-size:.92rem;">{{ ch.desc }}</p>
+          {% if ch.status == "done" %}<a href="{{ ch.url }}">Číst →</a>{% else %}<span class="tag" style="color:var(--ink-soft);">Připravujeme</span>{% endif %}
+        </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</main>
