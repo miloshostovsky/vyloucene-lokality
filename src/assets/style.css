@@ -330,3 +330,5 @@ footer.sitefoot p{max-width:60ch; opacity:.85;}
 .krajmapa-legend{display:flex; gap:16px; flex-wrap:wrap; margin-top:14px; font-size:.78rem; color:var(--ink-soft);}
 .krajmapa-legend span{display:inline-flex; align-items:center; gap:6px;}
 .krajmapa-legend i{width:12px;height:12px;border-radius:3px;display:inline-block;}
+
+.kraj-path.level-low{fill:var(--moss);}
