@@ -85,26 +85,25 @@ header.sitehead{
 
 nav.chapternav{
   border-top:1px solid var(--line);
-  overflow-x:auto;
-  white-space:nowrap;
-  scrollbar-width:thin;
 }
 nav.chapternav .navrow{
   display:flex;
+  flex-wrap:wrap;
   max-width:var(--max); margin:0 auto;
-  padding:0 40px;
+  padding:6px 40px;
+  gap:0 4px;
 }
-@media (max-width:720px){nav.chapternav .navrow{padding:0 20px;}}
+@media (max-width:720px){nav.chapternav .navrow{padding:6px 20px;}}
 nav.chapternav a, nav.chapternav span.soon{
   font-family:'Barlow Condensed',sans-serif;
   font-weight:600;
   font-size:.82rem;
   letter-spacing:.02em;
-  padding:11px 14px;
+  padding:8px 10px;
   text-decoration:none;
   color:var(--ink-soft);
   border-bottom:3px solid transparent;
-  flex-shrink:0;
+  white-space:nowrap;
 }
 nav.chapternav a:hover{color:var(--ink);}
 nav.chapternav a.active{color:var(--ink); border-bottom-color:var(--accent);}
