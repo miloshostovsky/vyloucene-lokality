@@ -332,3 +332,10 @@ footer.sitefoot p{max-width:60ch; opacity:.85;}
 .krajmapa-legend i{width:12px;height:12px;border-radius:3px;display:inline-block;}
 
 .kraj-path.level-low{fill:var(--moss);}
+
+.kraj-outline{fill:var(--card); stroke:var(--line); stroke-width:2;}
+.city-dot{fill:var(--slate); stroke:var(--paper); stroke-width:1.5; cursor:pointer; transition:opacity .12s ease;}
+.city-dot.known{fill:var(--alert);}
+.city-dot:hover{opacity:.75;}
+.city-dot.selected{stroke:var(--ink); stroke-width:2.6;}
+.krajmapa-detail .checklist li b{color:var(--ink);}
