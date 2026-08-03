@@ -1,12 +1,12 @@
 ---
-title: "Data a mapa CR - Vyloucene lokality"
+title: "Data a mapa ČR — Vyloučené lokality"
 layout: base.njk
 ---
 <header class="hero">
   <div class="wrap">
     <span class="chapter-tag">KAPITOLA 01</span>
-    <h1>Data a mapa CR</h1>
-    <p class="lede">Kolik socialne vyloucenych lokalit v Cesku je, kde se nachazeji a co o nich dnesni data neumi rict. Nejucelenejsi zdroj zustava analyza MPSV zpracovana spolecnosti GAC z let 2014-2015.</p>
+    <h1>Data a mapa ČR</h1>
+    <p class="lede">Kolik sociálně vyloučených lokalit v Česku je, kde se nacházejí a co o nich dnešní data neumí říct. Nejucelenější zdroj zůstává analýza MPSV zpracovaná společností GAC z let 2014–2015.</p>
   </div>
 </header>
 
@@ -14,27 +14,28 @@ layout: base.njk
   <div class="wrap">
 
     <div class="chapter-toc">
-      <span class="toc-label">V teto kapitole</span>
-      <a href="#cisla">Klicova cisla</a>
-      <a href="#mapa">Interaktivni mapa kraju</a>
-      <a href="#index">Index socialniho vylouceni (2024)</a>
-      <a href="#mezery">Co data neumi rict</a>
+      <span class="toc-label">V této kapitole</span>
+      <a href="#cisla">Klíčová čísla</a>
+      <a href="#mapa">Interaktivní mapa krajů</a>
+      <a href="#zebricek">Žebříček krajů</a>
+      <a href="#index">Index sociálního vyloučení (2024)</a>
+      <a href="#mezery">Co data neumí říct</a>
     </div>
 
-    <span class="eyebrow" id="cisla">Klicova cisla</span>
+    <span class="eyebrow" id="cisla">Klíčová čísla</span>
     <div class="statgrid">
-      <div class="statcell dark"><div class="val">606</div><div class="cap">socialne vyloucenych lokalit</div></div>
-      <div class="statcell"><div class="val">297</div><div class="cap">obci a mest, kde se lokality nachazeji</div></div>
-      <div class="statcell"><div class="val">95-115<small> tis.</small></div><div class="cap">odhad poctu obyvatel</div></div>
-      <div class="statcell alert"><div class="val">80-85<small> %</small></div><div class="cap">nezamestnanost v produktivnim veku</div></div>
+      <div class="statcell dark"><div class="val">606</div><div class="cap">sociálně vyloučených lokalit</div></div>
+      <div class="statcell"><div class="val">297</div><div class="cap">obcí a měst, kde se lokality nacházejí</div></div>
+      <div class="statcell"><div class="val">95–115<small> tis.</small></div><div class="cap">odhad počtu obyvatel</div></div>
+      <div class="statcell alert"><div class="val">80–85<small> %</small></div><div class="cap">nezaměstnanost v produktivním věku</div></div>
     </div>
 
     <div class="prose">
-      <p>Data pochazi z analyzy Ministerstva prace a socialnich veci, kterou zpracovala spolecnost GAC v letech 2014-2015 a ktera navazala na prvni mapovani z roku 2006. Kromě poctu lokalit prinesla i demograficky profil obyvatel: 53 % tvori lide ve veku 16-60 let, 43 % deti do 15 let. Priblizne tri ctvrtiny dospelych obyvatel maji pouze zakladni vzdelani.</p>
+      <p>Data pochází z analýzy Ministerstva práce a sociálních věcí, kterou zpracovala společnost GAC v letech 2014–2015 a která navázala na první mapování z roku 2006. Kromě počtu lokalit přinesla i demografický profil obyvatel: 53 % tvoří lidé ve věku 16–60 let, 43 % děti do 15 let. Přibližně tři čtvrtiny dospělých obyvatel mají pouze základní vzdělání.</p>
     </div>
 
-    <span class="eyebrow" id="mapa" style="margin-top:44px;">Interaktivni mapa kraju</span>
-    <p class="krajmapa-caption">Geograficka mapa (zjednodusene hranice kraju z verejne dostupnych dat) - kliknete na kraj pro dostupne informace. Analyza 2015 zverejnuje presna cisla jen pro nekolik kraju s nejvyssim vyskytem; u ostatnich jde jen o slovni konstatovani "pribylo lokalit ve vsech krajich".</p>
+    <span class="eyebrow" id="mapa" style="margin-top:44px;">Interaktivní mapa krajů</span>
+    <p class="krajmapa-caption">Geografická mapa (zjednodušené hranice krajů z veřejně dostupných dat) — klikněte na kraj pro přesný počet lokalit, srovnání s rokem 2006 a index růstu. Zdroj: Tabulka 4.1, Analýza sociálně vyloučených lokalit v ČR, GAC/MPSV, 2015.</p>
     <div class="krajmapa">
       <div class="krajmap-svg-wrap">
       <svg class="krajmap-svg" viewBox="0 0 800 460" xmlns="http://www.w3.org/2000/svg" id="krajSvg">
@@ -55,32 +56,33 @@ layout: base.njk
     </svg>
       </div>
       <div class="krajmapa-detail" id="krajDetail">
-        <p>Kliknete na kraj v mape vlevo pro podrobnosti.</p>
+        <p>Klikněte na kraj v mapě vlevo pro podrobnosti.</p>
       </div>
     </div>
     <div class="krajmapa-legend">
-      <span><i style="background:var(--alert);"></i> nejvyssi pocet lokalit (top 2, cislo k dispozici)</span>
-      <span><i style="background:var(--accent);"></i> vysoky pocet lokalit (top 3-5, cislo k dispozici)</span>
-      <span><i style="background:var(--paper-2);"></i> podrobna data nejsou k dispozici</span>
+      <span><i style="background:var(--alert);"></i> 60+ lokalit</span>
+      <span><i style="background:var(--accent);"></i> 30–59 lokalit</span>
+      <span><i style="background:var(--moss);"></i> 15–29 lokalit</span>
+      <span><i style="background:var(--paper-2);"></i> pod 15 lokalit</span>
     </div>
 
     <script>
     (function(){
       var kraje = {
-        ustecky: {name:"Ustecky kraj", level:"high", count:"89 lokalit", note:"Nejvyssi absolutni pocet lokalit i odhad poctu obyvatel (36 000-38 500). Nejvyssi koncentrace v zemi."},
-        moravskoslezsky: {name:"Moravskoslezsky kraj", level:"high", count:"72 lokalit", note:"Druhy nejvyssi pocet v zemi. Od roku 2006 vzrostl priblizne 2,5x."},
-        stredocesky: {name:"Stredocesky kraj", level:"medium", count:"64 lokalit", note:"Treti nejvyssi pocet v zemi."},
-        olomoucky: {name:"Olomoucky kraj", level:"medium", count:"62 lokalit", note:"Ctvrty nejvyssi pocet v zemi."},
-        karlovarsky: {name:"Karlovarsky kraj", level:"medium", count:"61 lokalit", note:"Paty nejvyssi pocet. Od roku 2006 (18 lokalit) se pocet ztrojnasobil - jeden z nejrychlejsich narustu v zemi."},
-        praha: {name:"Praha", level:"none"},
-        jihocesky: {name:"Jihocesky kraj", level:"none"},
-        plzensky: {name:"Plzensky kraj", level:"none"},
-        liberecky: {name:"Liberecky kraj", level:"none"},
-        kralovehradecky: {name:"Kralovehradecky kraj", level:"none"},
-        pardubicky: {name:"Pardubicky kraj", level:"none"},
-        vysocina: {name:"Kraj Vysocina", level:"none"},
-        jihomoravsky: {name:"Jihomoravsky kraj", level:"none"},
-        zlinsky: {name:"Zlinsky kraj", level:"none"}
+        ustecky: {name:"Ústecký kraj", count:89, y06:63, idx:"1,41", level:"high"},
+        stredocesky: {name:"Středočeský kraj", count:64, y06:36, idx:"1,78", level:"high"},
+        jihocesky: {name:"Jihočeský kraj", count:38, y06:16, idx:"2,38", level:"medium"},
+        plzensky: {name:"Plzeňský kraj", count:42, y06:17, idx:"2,47", level:"medium"},
+        karlovarsky: {name:"Karlovarský kraj", count:61, y06:18, idx:"3,39", level:"high"},
+        liberecky: {name:"Liberecký kraj", count:48, y06:26, idx:"1,85", level:"medium"},
+        kralovehradecky: {name:"Královéhradecký kraj", count:36, y06:25, idx:"1,44", level:"medium"},
+        pardubicky: {name:"Pardubický kraj", count:24, y06:15, idx:"1,60", level:"low"},
+        vysocina: {name:"Kraj Vysočina", count:13, y06:11, idx:"1,18", level:"min"},
+        jihomoravsky: {name:"Jihomoravský kraj", count:28, y06:11, idx:"2,55", level:"low"},
+        olomoucky: {name:"Olomoucký kraj", count:62, y06:27, idx:"2,30", level:"high"},
+        moravskoslezsky: {name:"Moravskoslezský kraj", count:72, y06:28, idx:"2,57", level:"high"},
+        zlinsky: {name:"Zlínský kraj", count:22, y06:11, idx:"2,00", level:"low"},
+        praha: {name:"Praha", count:7, y06:6, idx:"1,17", level:"min"}
       };
       var svgEl = document.getElementById("krajSvg");
       var detail = document.getElementById("krajDetail");
@@ -94,11 +96,8 @@ layout: base.njk
             el.classList.add("selected");
             var k = kraje[id];
             var html = "<h4>" + k.name + "</h4>";
-            if(k.level === "none"){
-              html += "<p>Podrobna data pro tento kraj nejsou z analyzy 2015 verejne dostupna v tomto rozliseni. Vime jen, ze pocet lokalit vzrostl ve vsech krajich CR.</p>";
-            } else {
-              html += "<span class=\"kd-count\">" + k.count + "</span><p>" + k.note + "</p>";
-            }
+            html += "<span class=\"kd-count\">" + k.count + " lokalit</span>";
+            html += "<p>V roce 2006 jich bylo " + k.y06 + " — index růstu " + k.idx + "×. Zdroj: GAC/MPSV, Analýza sociálně vyloučených lokalit v ČR (2015), tabulka 4.1.</p>";
             detail.innerHTML = html;
           });
         });
@@ -106,26 +105,45 @@ layout: base.njk
     })();
     </script>
 
-    <span class="eyebrow" id="index" style="margin-top:44px;">Index socialniho vylouceni (2024)</span>
+    <span class="eyebrow" id="zebricek" style="margin-top:44px;">Žebříček krajů podle počtu lokalit (2014)</span>
+    <div class="barlist">
+      <div class="barrow"><span class="barlabel">Ústecký</span><div class="bartrack"><div class="barfill alert" style="width:100%"></div></div><span class="barval">89 lok.</span></div>
+      <div class="barrow"><span class="barlabel">Moravskoslezský</span><div class="bartrack"><div class="barfill alert" style="width:81%"></div></div><span class="barval">72 lok.</span></div>
+      <div class="barrow"><span class="barlabel">Středočeský</span><div class="bartrack"><div class="barfill alert" style="width:72%"></div></div><span class="barval">64 lok.</span></div>
+      <div class="barrow"><span class="barlabel">Olomoucký</span><div class="bartrack"><div class="barfill alert" style="width:70%"></div></div><span class="barval">62 lok.</span></div>
+      <div class="barrow"><span class="barlabel">Karlovarský</span><div class="bartrack"><div class="barfill alert" style="width:69%"></div></div><span class="barval">61 lok.</span></div>
+      <div class="barrow"><span class="barlabel">Liberecký</span><div class="bartrack"><div class="barfill accent" style="width:54%"></div></div><span class="barval">48 lok.</span></div>
+      <div class="barrow"><span class="barlabel">Plzeňský</span><div class="bartrack"><div class="barfill accent" style="width:47%"></div></div><span class="barval">42 lok.</span></div>
+      <div class="barrow"><span class="barlabel">Jihočeský</span><div class="bartrack"><div class="barfill accent" style="width:43%"></div></div><span class="barval">38 lok.</span></div>
+      <div class="barrow"><span class="barlabel">Královéhradecký</span><div class="bartrack"><div class="barfill accent" style="width:40%"></div></div><span class="barval">36 lok.</span></div>
+      <div class="barrow"><span class="barlabel">Jihomoravský</span><div class="bartrack"><div class="barfill moss" style="width:31%"></div></div><span class="barval">28 lok.</span></div>
+      <div class="barrow"><span class="barlabel">Pardubický</span><div class="bartrack"><div class="barfill moss" style="width:27%"></div></div><span class="barval">24 lok.</span></div>
+      <div class="barrow"><span class="barlabel">Zlínský</span><div class="bartrack"><div class="barfill moss" style="width:25%"></div></div><span class="barval">22 lok.</span></div>
+      <div class="barrow"><span class="barlabel">Vysočina</span><div class="bartrack"><div class="barfill" style="width:15%"></div></div><span class="barval">13 lok.</span></div>
+      <div class="barrow"><span class="barlabel">Praha</span><div class="bartrack"><div class="barfill" style="width:8%"></div></div><span class="barval">7 lok.</span></div>
+    </div>
+    <p class="source-cite"><b>Zdroj:</b> GAC / MPSV, Analýza sociálně vyloučených lokalit v ČR (2015), tabulka 4.1. Součet za všechny kraje odpovídá celkovým 606 lokalitám.</p>
+
+    <div class="pullquote">Počet lokalit vzrostl mezi lety 2006 a 2014 ve všech čtrnácti krajích — nejrychleji v Karlovarském kraji (3,39×), nejpomaleji v kraji Vysočina a v Praze (kolem 1,2×).</div>
+
+    <span class="eyebrow" id="index" style="margin-top:44px;">Index sociálního vyloučení (2024)</span>
     <div class="prose">
-      <p>Aktualnejsi, i kdyz metodicky odlisny obrazek nabizi Index socialniho vylouceni Agentury pro socialni zaclenovani, ktery sleduje podil lidi v exekucich, na davkach, bez prace a bez vzdelani v jednotlivych obcich.</p>
+      <p>Aktuálnější, i když metodicky odlišný obrazek nabízí Index sociálního vyloučení Agentury pro sociální začleňování, který sleduje podíl lidí v exekucích, na dávkách, bez práce a bez vzdělání v jednotlivých obcích.</p>
     </div>
     <table class="data">
       <tr><th>Ukazatel</th><th>Hodnota</th></tr>
-      <tr><td>Obce s vyloucenymi mistý dle Indexu (2024)</td><td>241 z 6 258 obci CR</td></tr>
-      <tr><td>Mezirocni zmena</td><td>+50 obci oproti 2023</td></tr>
-      <tr><td>Podil na celkovem poctu obci CR</td><td>necela 4 %</td></tr>
+      <tr><td>Obce s vyloučenými místy dle Indexu (2024)</td><td>241 z 6 258 obcí ČR</td></tr>
+      <tr><td>Meziroční změna</td><td>+50 obcí oproti 2023</td></tr>
+      <tr><td>Podíl na celkovém počtu obcí ČR</td><td>necelá 4 %</td></tr>
     </table>
 
-    <div class="pullquote">"Kde presne dnes jsou a kolik jich je" je otazka, na kterou stat nema zcela aktualni odpoved - posledni celoplosne terenni setreni je pres deset let stare.</div>
-
-    <span class="eyebrow" id="mezery" style="margin-top:44px;">Co data neumi rict</span>
+    <span class="eyebrow" id="mezery" style="margin-top:44px;">Co data neumí říct</span>
     <div class="prose">
-      <p>Celostatni terenni setreni v rozsahu analyzy z let 2014-2015 se od te doby neopakovalo. Index socialniho vylouceni je cenny pro sledovani trendu v case, ale meri jine veci (koncentraci davek a exekuci na urovni cele obce, ne konkretni lokality) - neda se tedy pouzit jako prima nahrada za chybejici aktualni mapovani. Pri praci s cisly v teto kapitole je nutne mit na pameti, ze jde z vetsi casti o odhady stare pres deset let.</p>
+      <p>Celostátní terénní šetření v rozsahu analýzy z let 2014–2015 se od té doby neopakovalo — čísla v mapě výše jsou tedy přesná, ale přes deset let stará. Index sociálního vyloučení je cenný pro sledování trendu v čase, ale měří jiné věci (koncentraci dávek a exekucí na úrovni celé obce, ne konkrétní lokality) — nedá se tedy použít jako přímá náhrada za chybějící aktuální mapování po krajích.</p>
     </div>
 
     <div class="chapter-links">
-      <a href="/"><span class="dir">- Zpet</span><span class="ttl">Domu</span></a>
+      <a href="/"><span class="dir">← Zpět</span><span class="ttl">Domů</span></a>
     </div>
 
   </div>
