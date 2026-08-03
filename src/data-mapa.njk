@@ -16,7 +16,7 @@ layout: base.njk
     <div class="chapter-toc">
       <span class="toc-label">V této kapitole</span>
       <a href="#cisla">Klíčová čísla</a>
-      <a href="#kraje">Kraje s nejvyšší koncentrací</a>
+      <a href="#mapa">Interaktivní mapa krajů</a>
       <a href="#index">Index sociálního vyloučení (2024)</a>
       <a href="#mezery">Co data neumí říct</a>
     </div>
@@ -33,13 +33,63 @@ layout: base.njk
       <p>Data pochází z analýzy Ministerstva práce a sociálních věcí, kterou zpracovala společnost GAC v letech 2014–2015 a která navázala na první mapování z roku 2006. Kromě počtu lokalit přinesla i demografický profil obyvatel: 53 % tvoří lidé ve věku 16–60 let, 43 % děti do 15 let. Přibližně tři čtvrtiny dospělých obyvatel mají pouze základní vzdělání.</p>
     </div>
 
-    <span class="eyebrow" id="kraje" style="margin-top:44px;">Kraje s nejvyšší koncentrací</span>
-    <div class="barlist">
-      <div class="barrow"><span class="barlabel">Ústecký kraj</span><div class="bartrack"><div class="barfill alert" style="width:100%"></div></div><span class="barval">89 lok.</span></div>
-      <div class="barrow"><span class="barlabel">Moravskoslezský</span><div class="bartrack"><div class="barfill" style="width:62%"></div></div><span class="barval">~55 lok.</span></div>
-      <div class="barrow"><span class="barlabel">Karlovarský</span><div class="bartrack"><div class="barfill accent" style="width:41%"></div></div><span class="barval">~36 lok.</span></div>
+    <span class="eyebrow" id="mapa" style="margin-top:44px;">Interaktivní mapa krajů</span>
+    <p class="krajmapa-caption">Schematické rozmístění krajů (ne přesný geografický tvar) — klikněte na kraj pro dostupné informace. Analýza 2015 zveřejňuje přesná čísla jen pro několik krajů; u ostatních jde jen o slovní konstatování „přibylo lokalit ve všech krajích".</p>
+    <div class="krajmapa">
+      <div class="krajmapa-grid" id="krajGrid"></div>
+      <div class="krajmapa-detail" id="krajDetail">
+        <p>Klikněte na kraj v mapě vlevo pro podrobnosti.</p>
+      </div>
     </div>
-    <p class="source-cite"><b>Zdroj:</b> MPSV / GAC, Analýza sociálně vyloučených lokalit v ČR (2015). Ústecký kraj vedl s odhadem 36 000–38 500 obyvatel v těchto lokalitách — nejvyšší absolutní koncentrace v zemi.</p>
+    <div class="krajmapa-legend">
+      <span><i style="background:var(--alert);"></i> vysoká koncentrace (číslo k dispozici)</span>
+      <span><i style="background:var(--accent);"></i> střední koncentrace (číslo k dispozici)</span>
+      <span><i style="background:var(--paper-2);"></i> podrobná data nejsou k dispozici</span>
+    </div>
+
+    <script>
+    (function(){
+      var kraje = [
+        {id:"ustecky", name:"Ústecký kraj", row:1, col:2, level:"high", count:"89 lokalit", note:"Nejvyšší absolutní počet lokalit i odhad počtu obyvatel (36 000–38 500). Nejvyšší koncentrace v zemi."},
+        {id:"liberecky", name:"Liberecký kraj", row:1, col:3, level:"none"},
+        {id:"kralovehradecky", name:"Královéhradecký kraj", row:1, col:4, level:"none"},
+        {id:"karlovarsky", name:"Karlovarský kraj", row:2, col:1, level:"medium", count:"~36 lokalit", note:"Počet lokalit od roku 2006 vzrostl více než trojnásobně — jeden z nejrychlejších nárůstů v zemi."},
+        {id:"praha", name:"Praha", row:2, col:2, level:"none"},
+        {id:"stredocesky", name:"Středočeský kraj", row:2, col:3, level:"none"},
+        {id:"pardubicky", name:"Pardubický kraj", row:2, col:4, level:"none"},
+        {id:"plzensky", name:"Plzeňský kraj", row:3, col:1, level:"none"},
+        {id:"vysocina", name:"Kraj Vysočina", row:3, col:3, level:"none"},
+        {id:"olomoucky", name:"Olomoucký kraj", row:3, col:5, level:"none"},
+        {id:"moravskoslezsky", name:"Moravskoslezský kraj", row:3, col:6, level:"high", count:"~55 lokalit", note:"Počet lokalit od roku 2006 vzrostl více než trojnásobně; v absolutních číslech patří (spolu s Ústeckým krajem) k největšímu nárůstu obyvatel v lokalitách."},
+        {id:"jihocesky", name:"Jihočeský kraj", row:4, col:2, level:"none"},
+        {id:"jihomoravsky", name:"Jihomoravský kraj", row:4, col:4, level:"none"},
+        {id:"zlinsky", name:"Zlínský kraj", row:4, col:5, level:"none"}
+      ];
+      var grid = document.getElementById("krajGrid");
+      var detail = document.getElementById("krajDetail");
+      kraje.forEach(function(k){
+        var el = document.createElement("button");
+        el.type = "button";
+        el.className = "kraj-tile level-" + k.level;
+        el.style.gridRow = k.row;
+        el.style.gridColumn = k.col;
+        el.textContent = k.name.replace(" kraj","").replace("Kraj ","");
+        el.setAttribute("aria-label", k.name);
+        el.addEventListener("click", function(){
+          document.querySelectorAll(".kraj-tile").forEach(function(t){ t.classList.remove("selected"); });
+          el.classList.add("selected");
+          var html = "<h4>" + k.name + "</h4>";
+          if(k.level === "none"){
+            html += "<p>Podrobná data pro tento kraj nejsou z analýzy 2015 veřejně dostupná v tomto rozlišení. Víme jen, že počet lokalit vzrostl ve všech krajích ČR.</p>";
+          } else {
+            html += "<span class=\"kd-count\">" + k.count + "</span><p>" + k.note + "</p>";
+          }
+          detail.innerHTML = html;
+        });
+        grid.appendChild(el);
+      });
+    })();
+    </script>
 
     <span class="eyebrow" id="index" style="margin-top:44px;">Index sociálního vyloučení (2024)</span>
     <div class="prose">
