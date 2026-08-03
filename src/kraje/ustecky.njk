@@ -6,7 +6,7 @@ layout: base.njk
   <div class="wrap">
     <span class="chapter-tag">KRAJSKÝ PROFIL</span>
     <h1>Ústecký kraj</h1>
-    <p class="lede">Kraj s nejvyšším počtem sociálně vyloučených lokalit v Česku — 89 lokalit podle analýzy GAC/MPSV (2014), nárůst 1,41× oproti roku 2006. Níže jsou obce, kde je Agentura pro sociální začleňování aktivně zapojena, a u sedmi z nich i konkrétní čtvrti a sídliště, které jsou mediálně a odborně zdokumentované jako vyloučené lokality.</p>
+    <p class="lede">Kraj s nejvyšším počtem sociálně vyloučených lokalit v Česku — 89 lokalit podle analýzy GAC/MPSV (2014), nárůst 1,41× oproti roku 2006. Níže jsou obce, kde je Agentura pro sociální začleňování aktivně zapojena, a u devíti z nich i konkrétní čtvrti, sídliště nebo příběhy, které jsou mediálně a odborně zdokumentované.</p>
   </div>
 </header>
 
@@ -15,7 +15,7 @@ layout: base.njk
 
     <div class="chapter-toc">
       <span class="toc-label">Poznámka k datům</span>
-      <span style="font-family:'Barlow Condensed',sans-serif; font-size:.9rem; color:var(--ink-soft); max-width:70ch;">Plné body (barevně odlišené) = obce se známou, mediálně/odborně zdokumentovanou konkrétní vyloučenou čtvrtí nebo sídlištěm. Menší tečky = obce, kde aktivně působí Agentura pro sociální začleňování, ale konkrétní čtvrť veřejně dohledatelná není — mapa proto ukazuje jen bod za celou obec.</span>
+      <span style="font-family:'Barlow Condensed',sans-serif; font-size:.9rem; color:var(--ink-soft); max-width:70ch;">Plné body (barevně odlišené) = obce se známou, zdokumentovanou konkrétní čtvrtí, sídlištěm nebo příběhem. Menší tečky = obce, kde aktivně působí Agentura pro sociální začleňování, ale konkrétní podrobnosti veřejně dohledatelné nejsou.</span>
     </div>
 
     <div class="krajmapa">
@@ -32,7 +32,7 @@ layout: base.njk
       <circle class="city-dot" id="city-bilina" data-city="bilina" cx="341.3" cy="326.3" r="5"></circle>
       <circle class="city-dot" id="city-ceska_kamenice" data-city="ceska_kamenice" cx="603.9" cy="165.9" r="5"></circle>
       <circle class="city-dot" id="city-dubi" data-city="dubi" cx="346.8" cy="241.1" r="5"></circle>
-      <circle class="city-dot" id="city-duchcov" data-city="duchcov" cx="329.4" cy="290.8" r="5"></circle>
+      <circle class="city-dot known" id="city-duchcov" data-city="duchcov" cx="329.4" cy="290.8" r="7"></circle>
       <circle class="city-dot" id="city-hostka" data-city="hostka" cx="570.4" cy="364.6" r="5"></circle>
       <circle class="city-dot" id="city-jirikov" data-city="jirikov" cx="665.5" cy="40.1" r="5"></circle>
       <circle class="city-dot" id="city-klasterec" data-city="klasterec" cx="94.4" cy="431.9" r="5"></circle>
@@ -47,7 +47,7 @@ layout: base.njk
       <circle class="city-dot" id="city-steti" data-city="steti" cx="586.1" cy="387.8" r="5"></circle>
       <circle class="city-dot" id="city-straskov" data-city="straskov" cx="535.1" cy="445.4" r="5"></circle>
       <circle class="city-dot" id="city-trmice" data-city="trmice" cx="430.9" cy="265.6" r="5"></circle>
-      <circle class="city-dot" id="city-varnsdorf" data-city="varnsdorf" cx="685.9" cy="92.7" r="5"></circle>
+      <circle class="city-dot known" id="city-varnsdorf" data-city="varnsdorf" cx="685.9" cy="92.7" r="7"></circle>
       <circle class="city-dot" id="city-zatec" data-city="zatec" cx="247.5" cy="468.8" r="5"></circle>
       </svg>
       </div>
@@ -56,40 +56,40 @@ layout: base.njk
       </div>
     </div>
     <div class="krajmapa-legend">
-      <span><i style="background:var(--alert); border-radius:50%;"></i> obec se známou konkrétní čtvrtí/sídlištěm</span>
+      <span><i style="background:var(--alert); border-radius:50%;"></i> obec se známou konkrétní čtvrtí/příběhem</span>
       <span><i style="background:var(--slate); border-radius:50%;"></i> spolupracující obec, bez podrobného rozpadu</span>
     </div>
 
     <script>
     (function(){
       var cities = {
-        usti: {name:"Ústí nad Labem", known:true, locs:[{name:"Mojžíř",note:"Sídliště na okraji Ústí nad Labem, jedna z nejznámějších vyloučených lokalit v kraji."},{name:"Předlice",note:"Průmyslová čtvrť s vysokou koncentrací sociálně vyloučených obyvatel, dlouhodobě sledovaný případ obchodu s chudobou."}]},
-        most: {name:"Most", known:true, locs:[{name:"Chanov",note:"Sídliště postavené v 70. letech na okraji Mostu, oddělené od zbytku města — cca 700 obyvatel."}]},
-        litvinov: {name:"Litvínov", known:true, locs:[{name:"Janov",note:"Jedno z největších sídlišť v kraji zasažených sociálním vyloučením — cca 4 300 obyvatel."}]},
-        chomutov: {name:"Chomutov", known:true, locs:[{name:"Sídliště Březenecká, Kamenná, Písečná a Zahradní",note:"Dohromady cca 19 000 obyvatel sídlišť, až polovina může být považována za sociálně vyloučenou nebo ohroženou."}]},
-        decin: {name:"Děčín", known:true, locs:[{name:"Boletice nad Labem",note:"Cca 4 400 obyvatel, z toho odhadem 20 % sociálně vyloučených osob."}]},
-        jirkov: {name:"Jirkov", known:true, locs:[{name:"Nové Ervěnice",note:"Cca 1 500 sociálně vyloučených osob nebo osob ohrožených vyloučením."},{name:"Vinařice II",note:"Cca 1 450 sociálně vyloučených osob nebo osob ohrožených vyloučením."}]},
-        kadan: {name:"Kadaň", known:true, locs:[{name:"Prunéřov",note:"Menší lokalita, cca 220 obyvatel."}]},
-        bilina: {name:"Bílina", known:false, locs:[]},
-        ceska_kamenice: {name:"Česká Kamenice", known:false, locs:[]},
-        dubi: {name:"Dubí", known:false, locs:[]},
-        duchcov: {name:"Duchcov", known:false, locs:[]},
-        hostka: {name:"Hoštka", known:false, locs:[]},
-        jirikov: {name:"Jiříkov", known:false, locs:[]},
-        klasterec: {name:"Klášterec nad Ohří", known:false, locs:[]},
-        krasna_lipa: {name:"Krásná Lípa", known:false, locs:[]},
-        krupka: {name:"Krupka", known:false, locs:[]},
-        msene: {name:"Mšené-lázně", known:false, locs:[]},
-        obrnice: {name:"Obrnice", known:false, locs:[]},
-        postoloprty: {name:"Postoloprty", known:false, locs:[]},
-        roudnice: {name:"Roudnice nad Labem", known:false, locs:[]},
-        rumburk: {name:"Rumburk", known:false, locs:[]},
-        stare_krecany: {name:"Staré Křečany", known:false, locs:[]},
-        steti: {name:"Štětí", known:false, locs:[]},
-        straskov: {name:"Straškov-Vodochody", known:false, locs:[]},
-        trmice: {name:"Trmice", known:false, locs:[]},
-        varnsdorf: {name:"Varnsdorf", known:false, locs:[]},
-        zatec: {name:"Žatec", known:false, locs:[]}
+        usti: {name:"Ústí nad Labem", known:true, locs:[{name:"Mojžíř",note:"Sídliště na okraji Ústí nad Labem, jedna z nejznámějších vyloučených lokalit v kraji."},{name:"Předlice",note:"Průmyslová čtvrť s vysokou koncentrací sociálně vyloučených obyvatel, dlouhodobě sledovaný případ obchodu s chudobou."}], story:null},
+        most: {name:"Most", known:true, locs:[{name:"Chanov",note:"Sídliště postavené v 70. letech na okraji Mostu, oddělené od zbytku města — cca 700 obyvatel."}], story:null},
+        litvinov: {name:"Litvínov", known:true, locs:[{name:"Janov",note:"Sídliště Janov vzniklo jako běžné sídliště, ale po roce 1989 začaly realitní firmy skupovat byty a stěhovat do nich sociálně slabé nájemníky z celého severu Čech i z Prahy, zatímco majoritní obyvatelé se postupně stěhovali pryč — učebnicový mechanismus obchodu s chudobou. V roce 2001 nájemníci fakticky vybydleli celý panelový blok (tzv. Blok F3). Napětí vyvrcholilo na podzim 2008: krajně pravicová Dělnická strana uspořádala dvě velké demonstrace (18. října a 17. listopadu). Ta druhá přerostla v otevřené střety mezi extremisty, policií a obyvateli sídliště přímo u vjezdu do Janova — 14 zraněných, hořící policejní auto, nasazení obrněných vozidel a vodních děl. Média od té doby na Janov přilepila nálepku „největší české ghetto“ a radikálové se sem téměř každoročně vraceli s dalšími pochody. Sídliště se od té doby postupně vylidňuje a část paneláků byla už zbořena."}], story:null},
+        chomutov: {name:"Chomutov", known:true, locs:[{name:"Sídliště Březenecká, Kamenná, Písečná a Zahradní",note:"Dohromady cca 19 000 obyvatel sídlišť, až polovina může být považována za sociálně vyloučenou nebo ohroženou."}], story:null},
+        decin: {name:"Děčín", known:true, locs:[{name:"Boletice nad Labem",note:"Cca 4 400 obyvatel, z toho odhadem 20 % sociálně vyloučených osob."}], story:null},
+        jirkov: {name:"Jirkov", known:true, locs:[{name:"Nové Ervěnice",note:"Cca 1 500 sociálně vyloučených osob nebo osob ohrožených vyloučením."},{name:"Vinařice II",note:"Cca 1 450 sociálně vyloučených osob nebo osob ohrožených vyloučením."}], story:null},
+        kadan: {name:"Kadaň", known:true, locs:[{name:"Prunéřov",note:"Menší lokalita, cca 220 obyvatel."}], story:null},
+        bilina: {name:"Bílina", known:false, locs:[], story:null},
+        ceska_kamenice: {name:"Česká Kamenice", known:false, locs:[], story:null},
+        dubi: {name:"Dubí", known:false, locs:[], story:null},
+        duchcov: {name:"Duchcov", known:true, locs:[], story:"Duchcov nemá jednu konkrétní zdokumentovanou vyloučenou čtvrť jako Janov, ale má jiný, politicky výbušný příběh. V roce 2012 uzavřela místní organizace ČSSD v obecním zastupitelstvu koalici s krajně pravicovou Dělnickou stranou sociální spravedlnosti (DSSS) — tehdejší starosta Zbyněk Šimbera koalici veřejně obhajoval navzdory kritice z vlastní strany i celostátní politické scény („DSSS je legitimní strana, voliči ji na radnici chtějí,“ řekl tehdy). Šlo o jeden z nejvýraznějších případů, kdy mainstreamová strana na komunální úrovni normalizovala spolupráci s krajní pravicí v kontextu napětí kolem sociálního vyloučení."},
+        hostka: {name:"Hoštka", known:false, locs:[], story:null},
+        jirikov: {name:"Jiříkov", known:false, locs:[], story:null},
+        klasterec: {name:"Klášterec nad Ohří", known:false, locs:[], story:null},
+        krasna_lipa: {name:"Krásná Lípa", known:false, locs:[], story:null},
+        krupka: {name:"Krupka", known:false, locs:[], story:null},
+        msene: {name:"Mšené-lázně", known:false, locs:[], story:null},
+        obrnice: {name:"Obrnice", known:false, locs:[], story:null},
+        postoloprty: {name:"Postoloprty", known:false, locs:[], story:null},
+        roudnice: {name:"Roudnice nad Labem", known:false, locs:[], story:null},
+        rumburk: {name:"Rumburk", known:false, locs:[], story:null},
+        stare_krecany: {name:"Staré Křečany", known:false, locs:[], story:null},
+        steti: {name:"Štětí", known:false, locs:[], story:null},
+        straskov: {name:"Straškov-Vodochody", known:false, locs:[], story:null},
+        trmice: {name:"Trmice", known:false, locs:[], story:null},
+        varnsdorf: {name:"Varnsdorf", known:true, locs:[], story:"Šluknovský výběžek zažil na podzim 2011 jedny z nejvážnějších protiromských nepokojů v novodobé české historii. Rozbuškou byly dva útoky: 7. srpna napadli tři Romové mačetami hosty baru v Novém Boru, 21. srpna pak skupina asi dvaceti Romů napadla šest mladíků v Rumburku. To vyvolalo sérii demonstrací, kterých využila i krajní pravice — většina nepokojů a střetů s policií se odehrála právě ve Varnsdorfu, kde demonstranti opakovaně mířili k ubytovnám obývaným převážně Romy. Do regionu muselo být nasazeno až 600 policistů, jen jedna víkendová akce v září 2011 stála bezpečnostní opatření zhruba 3 miliony korun. Starostové měst Šluknovska žádali dopisem premiéra Petra Nečase o pomoc, oblast navštívila i vládní zmocněnkyně pro lidská práva. Následně obce zpřísnily místní vyhlášky (Varnsdorf omezil vysedávání a pití na veřejnosti, Rumburk omezil provoz heren) a policie se zaměřila i na drogovou kriminalitu v regionu."},
+        zatec: {name:"Žatec", known:false, locs:[], story:null}
       };
       var svg = document.getElementById("krajDetailSvg");
       var detail = document.getElementById("cityDetail");
@@ -108,10 +108,12 @@ layout: base.njk
                 html += "<li><b>" + l.name + "</b><br>" + l.note + "</li>";
               });
               html += "</ul>";
+            } else if(c.story){
+              html += "<p>" + c.story + "</p>";
             } else {
-              html += "<p>Obec spolupracuje s Agenturou pro sociální začleňování. Konkrétní čtvrť nebo sídliště, které by šlo veřejně zdokumentovat, se nám pro tuto obec nepodařilo dohledat — jde tedy jen o obecnou informaci na úrovni celé obce.</p>";
+              html += "<p>Obec spolupracuje s Agenturou pro sociální začleňování. Konkrétní čtvrť nebo příběh, který by šlo veřejně zdokumentovat, se nám pro tuto obec nepodařilo dohledat — jde tedy jen o obecnou informaci na úrovni celé obce.</p>";
             }
-            html += "<p class=\"source-cite\"><b>Zdroj:</b> Vláda ČR, Sociální začleňování a bydlení v Ústeckém kraji; Agentura pro sociální začleňování, socialni-zaclenovani.cz/lokality.</p>";
+            html += "<p class=\"source-cite\"><b>Zdroj:</b> viz citace v textu; Vláda ČR, Sociální začleňování a bydlení v Ústeckém kraji; Agentura pro sociální začleňování.</p>";
             detail.innerHTML = html;
           });
         });
